@@ -4,6 +4,7 @@ Te cuento que es mi primera experiencia en todo esto
 NODEJS, POSTMAN, GIT, POSTGRESQL, HEROKU
 
 Mis disculpas por la tardanza en esta entrega
+Tengo problemas con el tocken en GIT
 
 Intente hacer andar el router: "users.routes.js" de la misma manera que el router de saludos, pero no se que estoy haciendo mal asi que incorpore el CONTROLER y anduvo
 

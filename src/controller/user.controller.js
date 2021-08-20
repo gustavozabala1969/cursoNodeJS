@@ -1,4 +1,4 @@
-const model = require('../database/modelo/index')
+const model = require('../database/modelo/index');
 
 const getUsers = async (req,res) =>{
     // res.send("bienvenido GET TOTAL");

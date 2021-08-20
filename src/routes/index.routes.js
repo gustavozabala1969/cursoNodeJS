@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const userRoutes = require("./users.routes");
 const saludosRoutes = require("./saludos.routes");
+const authRoutes = require("./auth.routes");
 const isValido = require('../middleware/middlewares').isValido;
 
 const initUserRoutes = () => {
@@ -19,4 +20,11 @@ const initSaludosRoutes = () => {
     return router;
 }
 
-module.exports = { initUserRoutes, initSaludosRoutes }; 
+const initAuthRoutes = () => {
+    const router = Router();
+    router.get("/aut", (req,res)=>res.send("BIENVENIDO AUT- !!!"));
+    router.use("/auth", authRoutes);
+    return router;
+}
+
+module.exports = { initUserRoutes, initSaludosRoutes, initAuthRoutes }; 

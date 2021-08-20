@@ -15,6 +15,7 @@ const configApi = (app) => {
 const configRouter = (app) => {
   app.use("/api/v1/", routerConfig.initUserRoutes());
   app.use("/api/v1/", routerConfig.initSaludosRoutes());
+  app.use('/', routerConfig.initAuthRoutes());
   app.use('/', routerConfig.initSaludosRoutes());
 };
 
