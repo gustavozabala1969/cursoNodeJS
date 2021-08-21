@@ -41,7 +41,7 @@ const login = async (req,res) => {
     );
 }
 
-const registrarse = async (req,res) => {
+const register = async (req,res) => {
     const { firstName, lastName, username, email, password } = req.body;
     if (!username || !password) {
         return res.status(401).send({message: 'los recibidos estan incompletos'});
@@ -68,4 +68,4 @@ const registrarse = async (req,res) => {
 }
 
 
-module.exports = { login, registrarse }
+module.exports = { login, register }
