@@ -1,8 +1,8 @@
 const { Router } = require("express");
 const userRoutes = require("./users.routes");
-const saludosRoutes = require("./saludos.routes");
+// const saludosRoutes = require("./saludos.routes");
 const authRoutes = require("./auth.routes");
-const isValido = require('../middleware/middlewares').isValido;
+// const isValido = require('../middleware/middlewares').isValido;
 
 const initUserRoutes = () => {
     const router = Router();
@@ -12,19 +12,20 @@ const initUserRoutes = () => {
     return router;
 }
 
+/*
 const initSaludosRoutes = () => {
     const router = Router();
     router.get("/", (req,res)=>res.send("WELCOME TO THE API - !!!"));
     router.get("/sal", (req,res)=>res.send("BIENVENIDO SAL- !!!"));
     router.use("/saludos", saludosRoutes);
     return router;
-}
+}*/
 
 const initAuthRoutes = () => {
     const router = Router();
-    router.get("/aut", (req,res)=>res.send("BIENVENIDO AUT- !!!"));
+    router.get("/", (req,res)=>res.send("BIENVENIDO AUT- !!!"));
     router.use("/auth", authRoutes);
     return router;
 }
 
-module.exports = { initUserRoutes, initSaludosRoutes, initAuthRoutes }; 
+module.exports = { initUserRoutes, initAuthRoutes }; 

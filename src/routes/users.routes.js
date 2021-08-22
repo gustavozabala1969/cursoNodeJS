@@ -1,19 +1,11 @@
 const userRouter = require("express").Router();
 const isValido = require('../middleware/middlewares').isValido;
-const { getUsers, addUser, deleteUser, updateUser } = require('../controller/user.controller')
+const { getUsers, addUser, deleteUser, updateUser } = require('../controller/user.controller');
+const { authJwt } = require("../middleware");
 
-userRouter.get("/", [isValido], getUsers);
-/*userRouter.get('/', function (req, res, getUsers) {
-    // if the user ID is 0, skip to the next route
-    if (req.params.isValid == 1) return next();
-    return res.status(401).send({
-        message: "Acceso no valido",
-      });
-  });
-*/
-
-userRouter.post("/", [isValido], addUser);
-userRouter.delete("/:id", deleteUser);
-userRouter.put("/:id",updateUser);
+userRouter.get("/", [authJwt.check], getUsers);
+userRouter.post("/", [authJwt.check], addUser);
+userRouter.delete("/:id", [authJwt.check], deleteUser);
+userRouter.put("/:id", [authJwt.check], updateUser);
 
 module.exports = userRouter;

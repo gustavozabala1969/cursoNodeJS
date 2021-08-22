@@ -62,7 +62,7 @@ const register = async (req,res) => {
     });
 
     const token = jwt.sign({ id: usuarioCreado.id }, 'mySecretKey', {
-        expiresIn: 50000,
+        expiresIn: 100000,
       });
     return res.status(201).json({token : token})
 }
